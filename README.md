@@ -45,7 +45,7 @@ As you can see, you need to be a bit more hard-working if you want your code to 
 (lazy-extract file_reader tz_id)
 ```
 
-`tz_id` is java `TimeZone` ID. `file_reader` should be a `clojure.java.io/reader`.
+`tz_id` is a java `TimeZone` ID. `file_reader` should be a `clojure.java.io/reader`.
 
 
 
