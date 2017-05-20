@@ -2,6 +2,8 @@
 
 A simple library to extract Kindle generated `clipping.txt`.
 
+[![Clojars Project](https://img.shields.io/clojars/v/kce-clj.svg)](https://clojars.org/kce-clj)
+
 ## Usage
 
 kce_clj comes with 2 flavor. A hard-working version and a lazy version:
