@@ -1,4 +1,4 @@
-# Kindle Clipping Extractor in Clojure (kce_clj)
+# Kindle Clipping Extractor in Clojure (kce-clj)
 
 A simple library to extract Kindle generated `clipping.txt`.
 
@@ -6,10 +6,10 @@ A simple library to extract Kindle generated `clipping.txt`.
 
 ## Usage
 
-kce_clj comes with 2 flavor. A hard-working version and a lazy version:
+kce_clj comes with 2 flavors. A hard-working version and a lazy version:
 
 ```
-> (time (nth (extract "clipping.txt" "EST") 42))
+λ (time (nth (extract "clipping.txt" "EST") 42))
 "Elapsed time: 35.68178 msecs"
 {:category :highlight,
  :page {:start 7, :end 7},
@@ -17,9 +17,11 @@ kce_clj comes with 2 flavor. A hard-working version and a lazy version:
  :author "Snoman, Rick",
  :timestamp #inst "2016-06-30T15:21:52.000-00:00",
  :location {:start 274, :end 275},
- :text "The harmonic minor scale is very similar to the natural minor scale but with the seventh note increased, or augmented, up the scale by a semitone."}
+ :text "The harmonic minor scale is very similar to the natural minor scale
+ but with the seventh note increased, or augmented, up the scale by a
+ semitone."}
 
-> (time
+λ (time
     (with-open [rdr (clojure.java.io/reader "clipping.txt")]
       (nth (lazy-extract rdr "EST") 42)))
 "Elapsed time: 6.201403 msecs"
@@ -29,12 +31,14 @@ kce_clj comes with 2 flavor. A hard-working version and a lazy version:
  :author "Snoman, Rick",
  :timestamp #inst "2016-06-30T15:21:52.000-00:00",
  :location {:start 274, :end 275},
- :text "The harmonic minor scale is very similar to the natural minor scale but with the seventh note increased, or augmented, up the scale by a semitone."}
+ :text "The harmonic minor scale is very similar to the natural minor scale
+ but with the seventh note increased, or augmented, up the scale by a
+ semitone."}
 ```
 
-As you can see, you need to a bit more hard-working if you want to your code to be lazy :)
+As you can see, you need to be a bit more hard-working if you want your code to be lazy :)
 
-Usage:
+### Parameters
 
 ```
 (extract file_path_string tz_id)
