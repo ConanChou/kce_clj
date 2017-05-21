@@ -41,6 +41,7 @@ As you can see, you need to be a bit more hard-working if you want your code to 
 ### Parameters
 
 ```
+(use '[kce-clj.core :only [extract lazy-extract]])
 (extract file_path_string tz_id)
 (lazy-extract file_reader tz_id)
 ```
